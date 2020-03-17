@@ -1,5 +1,5 @@
 body::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 0.6rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -7,12 +7,12 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    background: #e0855d;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 :root{
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Open Sans';
 
     --text-primary: #b6b6b6;
@@ -24,15 +24,17 @@ body::-webkit-scrollbar-thumb {
 
 body {
     font-family: 'Lato', Arial, sans-serif;
-    color: black;
-    background-color: #fcfcfc;
+    color: black !important;
+    background-color: #fafafa;
 
     margin: 0;
     padding: 0;
 }
 
 main {
-    margin-left: 2rem;
+    margin-left: 14rem;
+    margin-right: 14rem;
+
     padding: 1rem;
 }
 
@@ -42,7 +44,7 @@ main {
 }
 
 header {
-    background: #ad87e2;
+    background: #000000;
 }
 
 header::after {
@@ -53,7 +55,16 @@ header::after {
 
 .logo {
     float: left;
-    padding: 10px 0;
+    padding: 9px 0;
+    font-family: 'IM Fell English', serif !important;
+    color: whitesmoke;
+    font-size: 18px;
+    left: 100%;
+}
+
+.logo sup {
+    font-size: 13px;
+    color: orange;
 }
 
 nav {
@@ -75,14 +86,14 @@ nav li {
 }
 
 nav a {
-    color: #2f2f2f;
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 17px;
 }
 
 nav a:hover {
-    color: #000;
+    color: #fb9865;
 }
 
 nav a::before {

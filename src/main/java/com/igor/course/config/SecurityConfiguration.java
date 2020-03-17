@@ -39,8 +39,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/add").hasRole("ADMIN") //spring add authomatically ROLE_ prefix
-                .antMatchers("/course","/info","/login","/top","/","loginpage").permitAll()
-                .and().formLogin().loginPage("/login")
+                .antMatchers("/","/account","/addnewuser","/login","/top","/course").permitAll()
+                .and().formLogin().loginPage("/login").successForwardUrl("/account")
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
     }
 

@@ -1,6 +1,7 @@
 package com.igor.course.dao;
 
 
+import com.igor.course.entity.Exercise;
 import com.igor.course.entity.User;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.repository.CrudRepository;
@@ -17,23 +18,27 @@ import java.util.function.Consumer;
 @Repository
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
-public class UserDao {
+public class UserDao implements Dao<User>{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     public User get(String id) {
         return  entityManager.find(User.class, id);
     }
 
+    @Override
     public List<User> getAll() {
         List<User> res
                 = entityManager
-                    .createQuery("from User order by points desc", User.class) //todo: use hql to display only first 20 leaders
+                    .createQuery("from User where points > 0 order by points desc ", User.class) //todo: use hql to display only first 20 leaders
+                    .setMaxResults(20)
                     .getResultList();
         return res;
     }
 
+    @Override
     public void save(User user) {
         entityManager.persist(user);
     }
@@ -49,8 +54,9 @@ public class UserDao {
 
     public void setPoints(User user, int newScore) {
         user.setPoints(newScore);
-    }
+    } //todo: refactor this to service layer
 
+    @Override
     public void delete(User user) {
         executeInsideTransaction(entityManager -> entityManager.remove(user));
     }
@@ -66,5 +72,9 @@ public class UserDao {
             tx.rollback();
             throw e;
         }
+    }
+
+    public void addExercise(String id, Exercise exercise) {
+        get(id).addExercise(exercise);
     }
 }

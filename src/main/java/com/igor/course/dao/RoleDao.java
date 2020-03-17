@@ -15,24 +15,24 @@ import java.util.function.Consumer;
 @Repository
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
-public class RoleDao {
+public class RoleDao implements Dao<Role> {
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     public Role get(String id) {
         return  entityManager.find(Role.class, id);
     }
 
+    @Override
     public List<Role> getAll() {
-        List<Role> res
-                = entityManager
-                .createQuery("from Role", Role.class)
-                .getResultList();
-        return res;
+        return entityManager
+        .createQuery("from Role", Role.class)
+        .getResultList();
     }
 
-
+    @Override
     public void save(Role role) {
         entityManager.persist(role);
     }
@@ -45,10 +45,7 @@ public class RoleDao {
         entityManager.getTransaction().commit();
     }
 
-    public void setPoints(Role role, int newScore) {
-
-    }
-
+    @Override
     public void delete(Role role) {
         entityManager.remove(role);
     }

@@ -1,7 +1,7 @@
 package com.igor.course.controllers;
 
 import com.igor.course.entity.User;
-import com.igor.course.services.UserServiceImpl;
+import com.igor.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -13,10 +13,10 @@ import java.util.List;
 
 @Controller
 public class MainController {
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     @Autowired
-    public MainController(UserServiceImpl userService) {
+    public MainController(UserService userService) {
         this.userService = userService;
     }
 
@@ -28,22 +28,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/course")
-    public String goToCourse(Model model) {
-        String username =  SecurityContextHolder.getContext().getAuthentication().getName();
-        model.addAttribute("username", username);
-
-        return "course/course";
-    }
-
-    @RequestMapping("/info")
-    public String info(Model model) {
-        String username =  SecurityContextHolder.getContext().getAuthentication().getName();
-        model.addAttribute("username", username);
-
-        return "info/info";
-    }
-
     @RequestMapping("/top")
     public String getTop(Model model) {
         String username =  SecurityContextHolder.getContext().getAuthentication().getName();
@@ -53,13 +37,5 @@ public class MainController {
         model.addAttribute("top_users", users);
 
         return "/top/top";
-    }
-
-    @RequestMapping("/add")
-    public String addText(Model model) {
-        String username =  SecurityContextHolder.getContext().getAuthentication().getName();
-        model.addAttribute("username", username);
-
-        return "add/add";
     }
 }

@@ -1,23 +1,19 @@
 package com.igor.course.config;
 
-import com.igor.course.dao.UserDao;
 import com.igor.course.entity.User;
 import com.igor.course.services.UserService;
-import com.igor.course.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
 
 public class MyUserDetails implements UserDetails {
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
     private User user;
 
     public MyUserDetails(String s) {

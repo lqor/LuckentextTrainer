@@ -1,6 +1,8 @@
 package com.igor.course.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -27,6 +29,14 @@ public class User {
     @Column(name = "enabled")
     private boolean enabled;
 
+    @ManyToMany
+    @JoinTable(
+            name = "user_text",
+            joinColumns = {@JoinColumn(name = "username")},
+            inverseJoinColumns = {@JoinColumn(name = "textid")}
+    )
+    private Set<Exercise> exercises;
+
     public User() {
     }
 
@@ -38,6 +48,8 @@ public class User {
         this.expired = expired;
         this.locked = locked;
         this.enabled = enabled;
+
+        exercises = new HashSet<>();
     }
 
     public String getUsername() {
@@ -94,5 +106,17 @@ public class User {
 
     public void setLocked(boolean locked) {
         this.locked = locked;
+    }
+
+    public Set<Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(Set<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+    public void addExercise(Exercise exercise) {
+        exercises.add(exercise);
     }
 }

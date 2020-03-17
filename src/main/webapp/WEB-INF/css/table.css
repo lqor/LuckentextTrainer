@@ -17,7 +17,7 @@ body {
 
 .wrapper {
     line-height: 1.5em;
-    margin: 0 auto;
+    /*margin: 0;*/
     padding: 2em 0 3em;
     width: 90%;
     max-width: 2000px;
@@ -31,7 +31,7 @@ table {
 }
 
 th {
-    background-color: #326295;
+    background-color: #372300;
     font-weight: bold;
     color: #fff;
     white-space: nowrap;
@@ -55,4 +55,13 @@ tbody tr:hover {
 
 td.rank {
     text-transform: capitalize;
+}
+
+.rowlink::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5em
 }

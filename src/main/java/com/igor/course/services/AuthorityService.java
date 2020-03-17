@@ -9,11 +9,11 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class AuthorityServiceImpl implements UserService<Role> {
+public class AuthorityService implements ServiceInterface<Role> {
     private final RoleDao roleDao;
 
     @Autowired
-    public AuthorityServiceImpl(RoleDao roleDao) {
+    public AuthorityService(RoleDao roleDao) {
         this.roleDao = roleDao;
     }
 

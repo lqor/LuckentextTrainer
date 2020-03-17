@@ -9,25 +9,23 @@
 <html>
 <head>
     <title>Login page</title>
-
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="container">
-        <h1 class="logo"></h1>
+        <h1 class="logo">
+            Lücken<sup>TRAINER</sup>
+        </h1>
 
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/course">Kurs</a></li>
-                <li><a href="/top">Top Benutzer</a></li>
-                <li><a href="/info">Infomation/FAQ</a></li>
+                <li><a href="/top">Top 20 Benutzer</a></li>
                 <li><a href="/account">Account</a></li>
                 <security:authorize access="hasRole('ADMIN')">
                     <li><a href="/add">Add Text</a></li>
-                </security:authorize>
-                <security:authorize access="hasAnyRole('ADMIN','USER')">
-                    <div class="userName"><li>User: ${username}</li></div>
                 </security:authorize>
             </ul>
         </nav>

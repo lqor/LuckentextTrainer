@@ -1,6 +1,6 @@
 .form-wrap {
     width: 320px;
-    background: #4e255d;
+    background: #24112a;
     padding: 10px 20px;
     box-sizing: border-box;
     position: fixed;
@@ -8,7 +8,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
-h1 {
+.form-wrap h1 {
     text-align: center;
     color: #fff;
     font-weight: normal;
