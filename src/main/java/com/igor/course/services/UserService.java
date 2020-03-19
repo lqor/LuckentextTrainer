@@ -47,9 +47,8 @@ public class UserService implements ServiceInterface<User> {
     @Override
     @Transactional
     public void update(String id, User user) throws Exception {
-        throw new Exception("\n============> Methode update ist noch nicht implementirt!\n");
+        throw new Exception("\n Methode ist noch nicht implementiert!\n");
     }
-
 
     @Transactional
     public void setPoints(String id, int points) {

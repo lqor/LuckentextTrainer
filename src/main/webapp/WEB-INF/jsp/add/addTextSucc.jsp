@@ -18,12 +18,12 @@
 
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/course">Kurs</a></li>
+                <li><a href="/">Architektur</a></li>
+                <li><a href="/course">Üben</a></li>
                 <li><a href="/top">Top 20 Benutzer</a></li>
-                <li><a href="/account">Account</a></li>
+                <li><a href="/account">KOnto</a></li>
                 <security:authorize access="hasRole('ADMIN')">
-                    <li><a href="/add">Add Text</a></li>
+                    <li><a href="/add">Text hinzufügen</a></li>
                 </security:authorize>
             </ul>
         </nav>

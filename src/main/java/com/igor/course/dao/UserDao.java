@@ -32,8 +32,7 @@ public class UserDao implements Dao<User>{
     public List<User> getAll() {
         List<User> res
                 = entityManager
-                    .createQuery("from User where points > 0 order by points desc ", User.class) //todo: use hql to display only first 20 leaders
-                    .setMaxResults(20)
+                    .createQuery("from User where points > 0 order by points desc ", User.class)
                     .getResultList();
         return res;
     }
@@ -54,7 +53,7 @@ public class UserDao implements Dao<User>{
 
     public void setPoints(User user, int newScore) {
         user.setPoints(newScore);
-    } //todo: refactor this to service layer
+    }
 
     @Override
     public void delete(User user) {
