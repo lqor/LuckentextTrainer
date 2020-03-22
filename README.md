@@ -8,6 +8,6 @@ Der Lückentrainer ist ein Tool zum Üben von bestimmten Aufgaben(Lückentexte, 
 * Spring Security
 * JSP
 
-[Hier Demo][https://lucken.herokuapp.com] 
+[Hier Demo](lucken.herokuapp.com)
 
 (kann aber bis 30 Sekunden beim ersten Öffnen dauern)
