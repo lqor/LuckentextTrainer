@@ -1,4 +1,4 @@
-# Luckentext Trainer
+# Lückentext Trainer
 Der Lückentrainer ist ein Tool zum Üben von bestimmten Aufgaben(Lückentexte, wo ein Wort fehlt), die besonders viel Schwierigkeiten für Deutschlernende bereitstellen.
 
 ## Was wurde benutzt:
